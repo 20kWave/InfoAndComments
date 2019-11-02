@@ -10,7 +10,7 @@ CREATE TABLE Songs (
   num_plays INT NOT NULL,
   num_likes INT NOT NULL,
   num_reposts INT NOT NULL,
-  release_date VARCHAR(255),
+  release_date DATE NOT NULL,
   p_line  VARCHAR(255),
   c_line VARCHAR(255),
   PRIMARY KEY (id),
@@ -30,8 +30,8 @@ CREATE TABLE Comments (
   author VARCHAR(255),
   content TEXT(300),
   song_id INT NOT NULL,
-  commented_at VARCHAR(255),
-  time_ago VARCHAR(255),
+  commented_at TIME NOT NULL,
+  time_ago TIME NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (song_id) REFERENCES Songs (id) 
 )

@@ -10,7 +10,7 @@ class ArtistInfo extends React.Component{
         
         <div>
             <div className="flex-container-artist">
-              <div><img className='artistPic' src='http://localhost:4000/artistpic.jpg'></img></div>
+              <div><img className='artistPic' src='http://localhost:3030/artistpic.jpg'></img></div>
               <div className='artistName'>Tierra Whack</div>
               <div className='stats-artist'>
                 <div>
