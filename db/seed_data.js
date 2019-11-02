@@ -1,6 +1,5 @@
 const fs = require('fs');
 
-
 const LoremIpsum = require('lorem-ipsum').LoremIpsum;
 const faker = require('faker');
 const dateGenerator = require('random-date-generator');
@@ -23,13 +22,11 @@ const getRandomDate = () => {
   return randomDate;
 }
 
-
 const writeSongs = fs.createWriteStream('songs.csv');
 writeSongs.write('id,title,artist_id,num_plays,num_likes,num_reposts,release_date,p_line,c_line\n', 'utf-8');
 const writeSongData = (writer, encoding, callback) => {
   var i = 10000000;
   var id = 0;
-
   write = () => {
     var ok = true;
     do {
@@ -64,14 +61,12 @@ const writeArtistData = (writer, encoding, callback) => {
   var i = 14000000;
   var id = 0;
   var totalSongs = 10000000;
-
   write = () => {
     var ok = true;
     do {
-      
       i--;
       id++;
-      var artist_name = lorem.generateWords(Math.floor(Math.random() * 4) + 1);
+      var artist_name = faker.name.findName();
       var num_followers = lorem.generateWords(Math.floor(Math.random() * 1000000) + 1);
 
       if (totalSongs < 0) {
@@ -102,7 +97,6 @@ writeComments.write('id,author,content,author_id,song_id,commented_at\n', 'utf-8
 const writeCommentsData = (writer, encoding, callback) => {
   var i = 300000000;
   var id = 0;
-
   write = () => {
     var ok = true;
     do {
