@@ -26,14 +26,11 @@ request to website's API to add a new comment
 
 ***POST requests require author, content, and song_id:***
 ```sh
-  var date = Date();
-
   var comment = {
     author: <string>,
     content: <text>,
     song_id: <number>,
     commented_at: Date(),
-    time_ago: moment([date]).fromNow();
   }
 ```
 
