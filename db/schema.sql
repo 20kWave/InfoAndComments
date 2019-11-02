@@ -6,7 +6,6 @@ CREATE TABLE Songs (
   id INT NOT NULL AUTO_INCREMENT,
   title VARCHAR (255),
   artist_id INT NOT NULL,
-  num_comments INT NOT NULL,
   num_plays INT NOT NULL,
   num_likes INT NOT NULL,
   num_reposts INT NOT NULL,
@@ -29,9 +28,9 @@ CREATE TABLE Comments (
   id INT NOT NULL AUTO_INCREMENT
   author VARCHAR(255),
   content TEXT(300),
+  author_id INT NOT NULL,
   song_id INT NOT NULL,
   commented_at TIME NOT NULL,
-  time_ago TIME NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (song_id) REFERENCES Songs (id) 
 )
