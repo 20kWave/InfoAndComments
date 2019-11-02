@@ -46,13 +46,12 @@ const writeSongData = (writer, encoding, callback) => {
       } else {
         ok = writer.write(data, encoding);
       }
-    } while (i > 0 && ok) {
+    } while (i > 0 && ok);
       if (i > 0) {
         writer.once('drain', write);
       }
     }
   write();
-  }
 }
 
 const writeArtists = fs.createWriteStream('artists.csv');
@@ -83,13 +82,12 @@ const writeArtistData = (writer, encoding, callback) => {
       } else {
         ok = writer.write(data, encoding);
       }
-    } while (i > 0 && ok) {
+    } while (i > 0 && ok);
       if (i > 0) {
         writer.once('drain', write);
       }
     }
   write();
-  }
 }
 
 const writeComments = fs.createWriteStream('comments.csv');
@@ -113,13 +111,12 @@ const writeCommentsData = (writer, encoding, callback) => {
       } else {
         ok = writer.write(data, encoding);
       }
-    } while (i > 0 && ok) {
+    } while (i > 0 && ok);
       if (i > 0) {
         writer.once('drain', write);
       }
     }
   write();
-  }
 }
 
 writeSongData(writeSongs, 'utf-8', () => {
