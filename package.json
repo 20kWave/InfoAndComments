@@ -4,10 +4,12 @@
   "description": "***Artist, Track Information and Comments for the SoundClout App***",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "mysql": "mysql -u root < server/schema.sql",
     "start": "nodemon ./server/index.js",
-    "react-dev": "webpack -w"
+    "react-dev": "webpack -w",
+    "init:tables": "mysql -u root -p < db/schema.sql",
+    "load:members": "mysql -u root -p < db/load_members.sql",
+    "load:songs": "mysql -u root -p < db/load_songs.sql",
+    "load:comments": "mysql -u root -p < db/load_comments.sql"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "lorem-ipsum": "^2.0.3",
+    "moment": "^2.24.0",
     "mongoose": "^4.6.4",
     "mysql": "^2.17.1",
     "nodemon": "^1.19.2",
