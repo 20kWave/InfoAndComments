@@ -67,88 +67,88 @@ const writeSongData = (writer, encoding, callback) => {
   write();
 }
 
-const writeMembers = fs.createWriteStream('members.csv');
-const writeMemberData = (writer, encoding, callback) => {
-  var i = 14000000;
-  var id = 0;
-  // var totalSongs = 10000000;
-  write = () => {
-    var today = new Date();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var ok = true;
-    do {
-      if (i % 1000000 === 0) {
-        console.log(`${i} records remaining... ${((id / 14000000) * 100).toFixed(2)}%\n${time}\n`)
-      } else if (id === 14000000) {
-        console.log(`0 records remaining... 100%\n${time}\n`)
-      }
-      i--;
-      id++;
-      var member_name = faker.name.findName();
-      var num_followers = Math.floor(Math.random() * 1000000) + 1;
+// const writeMembers = fs.createWriteStream('members.csv');
+// const writeMemberData = (writer, encoding, callback) => {
+//   var i = 14000000;
+//   var id = 0;
+//   // var totalSongs = 10000000;
+//   write = () => {
+//     var today = new Date();
+//     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+//     var ok = true;
+//     do {
+//       if (i % 1000000 === 0) {
+//         console.log(`${i} records remaining... ${((id / 14000000) * 100).toFixed(2)}%\n${time}\n`)
+//       } else if (id === 14000000) {
+//         console.log(`0 records remaining... 100%\n${time}\n`)
+//       }
+//       i--;
+//       id++;
+//       var member_name = faker.name.findName();
+//       var num_followers = Math.floor(Math.random() * 1000000) + 1;
 
-      var num_songs = Math.floor(Math.random() * 200) + 1;
+//       var num_songs = Math.floor(Math.random() * 200) + 1;
 
-      // if (totalSongs < 0) {
-      //   var num_songs = 0;
-      // } else {
-      //   var songsAdded = Math.floor(Math.random() * 200) + 1;
-      //   var num_songs = songsAdded;
-      //   totalSongs -= songsAdded;
-      // }
+//       // if (totalSongs < 0) {
+//       //   var num_songs = 0;
+//       // } else {
+//       //   var songsAdded = Math.floor(Math.random() * 200) + 1;
+//       //   var num_songs = songsAdded;
+//       //   totalSongs -= songsAdded;
+//       // }
 
-      var data = `${id},${member_name},${num_followers},${num_songs}\n`;
-      if (i === 0) {
-        writer.write(data, encoding, callback);
-      } else {
-        ok = writer.write(data, encoding);
-      }
-    } while (i > 0 && ok);
-      if (i > 0) {
-        writer.once('drain', write);
-      }
-    }
-  write();
-}
+//       var data = `${id},${member_name},${num_followers},${num_songs}\n`;
+//       if (i === 0) {
+//         writer.write(data, encoding, callback);
+//       } else {
+//         ok = writer.write(data, encoding);
+//       }
+//     } while (i > 0 && ok);
+//       if (i > 0) {
+//         writer.once('drain', write);
+//       }
+//     }
+//   write();
+// }
 
-const writeComments = fs.createWriteStream('comments.csv');
-const writeCommentsData = (writer, encoding, callback) => {
-  var i = 100000000;
-  var id = 0;
-  write = () => {
-    var today = new Date();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var ok = true;
-    do {
-      if (i % 1000000 === 0) {
-        console.log(`${i} records remaining... ${((id / 100000000) * 100).toFixed(2)}%\n${time}\n`)
-      } else if (i === 0) {
-        console.log(`0 records remaining... 100%\n${time}\n`)
-      }
-      i--;
-      id++;
-      var content = lorem.generateSentences(Math.floor(Math.random() * 3) + 1); 
-      var member_id = Math.floor(Math.random() * 14000000) + 1;
-      var song_id = Math.floor(Math.random() * 1000000) + 1;
-      var commented_at = getRandomDate();
-      var data = `${id},${content},${member_id},${song_id},${commented_at}\n`;
-      if (i === 0) {
-        writer.write(data, encoding, callback);
-      } else {
-        ok = writer.write(data, encoding);
-      }
-    } while (i > 0 && ok);
-      if (i > 0) {
-        writer.once('drain', write);
-      }
-    }
-  write();
-}
+// const writeComments = fs.createWriteStream('comments.csv');
+// const writeCommentsData = (writer, encoding, callback) => {
+//   var i = 100000000;
+//   var id = 0;
+//   write = () => {
+//     var today = new Date();
+//     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+//     var ok = true;
+//     do {
+//       if (i % 1000000 === 0) {
+//         console.log(`${i} records remaining... ${((id / 100000000) * 100).toFixed(2)}%\n${time}\n`)
+//       } else if (i === 0) {
+//         console.log(`0 records remaining... 100%\n${time}\n`)
+//       }
+//       i--;
+//       id++;
+//       var content = lorem.generateSentences(Math.floor(Math.random() * 3) + 1); 
+//       var member_id = Math.floor(Math.random() * 14000000) + 1;
+//       var song_id = Math.floor(Math.random() * 1000000) + 1;
+//       var commented_at = getRandomDate();
+//       var data = `${id},${content},${member_id},${song_id},${commented_at}\n`;
+//       if (i === 0) {
+//         writer.write(data, encoding, callback);
+//       } else {
+//         ok = writer.write(data, encoding);
+//       }
+//     } while (i > 0 && ok);
+//       if (i > 0) {
+//         writer.once('drain', write);
+//       }
+//     }
+//   write();
+// }
 
-// writeSongs.write('id,title,member_id,num_plays,num_likes,num_reposts,release_date,p_line,c_line\n', 'utf-8');
-// writeSongData(writeSongs, 'utf-8', () => {
-//   writeSongs.end();
-// });
+writeSongs.write('id,title,member_id,num_plays,num_likes,num_reposts,release_date,p_line,c_line\n', 'utf-8');
+writeSongData(writeSongs, 'utf-8', () => {
+  writeSongs.end();
+});
 
 // writeMembers.write('id,member_name,num_followers,num_songs\n', 'utf-8');
 // writeMemberData(writeMembers, 'utf-8', () => {
