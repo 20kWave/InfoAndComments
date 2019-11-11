@@ -15,6 +15,8 @@ request to website's API for all song by its unique ID
 | :song_id | number |
 | -------- | ------ |
 
+<br/>
+<br/>
 
 `/api/songs/:genre`<br/>
 request to website's API for all songs by genre
@@ -28,6 +30,8 @@ request to website's API for all songs by genre
 |        | 'electronica' |
 |        | 'country' |
 
+<br/>
+<br/>
 
 `/api/comments/:song_id`<br/>
 request to website's API for all comments by a song's ID
@@ -35,6 +39,7 @@ request to website's API for all comments by a song's ID
 | :song_id | number |
 | -------- | ------ |
 
+<br/>
 
 ### POST
 `/api/post/comments/:song_id`<br/> 
