@@ -16,7 +16,6 @@ request to website's API for all song by its unique ID
 | -------- | ------ |
 
 <br/>
-<br/>
 
 `/api/songs/:genre`<br/>
 request to website's API for all songs by genre
@@ -30,7 +29,6 @@ request to website's API for all songs by genre
 |        | 'electronica' |
 |        | 'country' |
 
-<br/>
 <br/>
 
 `/api/comments/:song_id`<br/>
@@ -48,6 +46,7 @@ request to website's API to add a new comment
 | :song_id | number |
 | -------- | ------ |
 
+<br/>
 
 ***POST requests require song_id, id, content, and commented_at:***
 ```sh
