@@ -8,7 +8,7 @@ class Commentbar extends React.Component{
         return (
         <div className='flex-container-commentbar-interaction'>
             <div className="flex-container-commentbar">
-              <div><img className='headshot' src='http://localhost:3030/headshot.jpg'></img></div>
+              <div><img className='headshot' src='http://localhost:6020/headshot.jpg'></img></div>
                 <div>
                     <form>
                         <input className="form" type="text" name="inputBox" placeholder="Write a comment" size='60'/>

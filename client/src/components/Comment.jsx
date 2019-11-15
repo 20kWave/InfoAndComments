@@ -5,7 +5,7 @@ const Comment = (props) => {
     <div>
       <div className='comment-container-asi'>
       <div>
-        <img className='comment-pic' src='http://localhost:3030/headshot.jpg'></img>
+        <img className='comment-pic' src='http://localhost:6020/headshot.jpg'></img>
       </div>
       <div className='flex-comment-container-top-bar-name'>
         {props.comment.author}

@@ -2703,7 +2703,7 @@ var ArtistInfo = function (_React$Component) {
           _react2.default.createElement(
             'div',
             null,
-            _react2.default.createElement('img', { className: 'artistPic', src: 'http://localhost:3030/artistpic.jpg' })
+            _react2.default.createElement('img', { className: 'artistPic', src: 'http://localhost:6020/artistpic.jpg' })
           ),
           _react2.default.createElement(
             'div',
@@ -2795,7 +2795,7 @@ var Comment = function Comment(props) {
       _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement('img', { className: 'comment-pic', src: 'http://localhost:3030/headshot.jpg' })
+        _react2.default.createElement('img', { className: 'comment-pic', src: 'http://localhost:6020/headshot.jpg' })
       ),
       _react2.default.createElement(
         'div',
@@ -2878,7 +2878,7 @@ var Commentbar = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         null,
-                        _react2.default.createElement('img', { className: 'headshot', src: 'http://localhost:3030/headshot.jpg' })
+                        _react2.default.createElement('img', { className: 'headshot', src: 'http://localhost:6020/headshot.jpg' })
                     ),
                     _react2.default.createElement(
                         'div',

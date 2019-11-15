@@ -1,9 +1,11 @@
+require('newrelic');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const db = require('../db/Cassandra/index.js');
-const PORT = 3030;
+const PORT = 6020;
 const app = express();
 
 app.use(bodyParser.json());

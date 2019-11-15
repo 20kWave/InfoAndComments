@@ -1,0 +1,12 @@
+config:
+  target: 'http://localhost:6020'
+  phases:
+    - duration: 120
+      arrivalRate: 200
+  defaults:
+    headers:
+      x-my-service-auth: process.env.SERVICE_API_KEY
+scenarios:
+  - flow:
+    - get:
+        url: "/songs/{{ $randomNumber(1,10000000) }}"

@@ -1,4 +1,4 @@
-CREATE KEYSPACE 20kWave;
+CREATE KEYSPACE 20kWave WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '3'} AND durable_writes = 'true';
 
 CREATE TABLE songs_by_id (
    id int PRIMARY KEY,  
@@ -36,6 +36,8 @@ CREATE TABLE comments_by_song_id (
    commented_at text,
    PRIMARY KEY (song_id, id)
 );
+
+
 
 -- COPY songs_by_id (id, title, genre, artist_name, num_comments, num_plays, num_likes, num_reposts, release_date, p_line, c_line) FROM '/Users/marcusdlp/hackreactor/SDC/dump_cassandra/songs_by_id.csv' WITH DELIMITER=',' AND HEADER=TRUE;
 -- COPY songs_by_genre (genre, id, title, artist_name, num_comments, num_plays, num_likes, num_reposts, release_date, p_line, c_line) FROM '/Users/marcusdlp/hackreactor/SDC/dump_cassandra/songs_by_genre.csv' WITH DELIMITER=',' AND HEADER=TRUE;
